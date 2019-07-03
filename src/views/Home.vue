@@ -1,18 +1,128 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+<template>  
+    <section class="container">
+      <section class="inner-container-top">
+        <div class="top-left">
+          <app-triangle v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleInner"/>
+        </div>
+        <div class="top-right">
+          <app-triangle v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleInner"/>
+        </div>
+      </section>
+      <section class="inner-container-middle">
+        <div class="floating item">
+          <app-triangle imageName="mugshot" v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleInner"/>
+        </div>
+        <div class="floating-reverse item">
+          <app-triangle v-bind:outerShape="reverseTriangleOuter" v-bind:innerShape="reverseTriangleInner"/>
+        </div>
+        <div class="floating item">
+          <app-triangle v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleInner"/>
+        </div>
+      </section>
+      <section class="inner-container-bottom">
+        <div class="top-left">
+          <app-triangle v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleInner"/>
+        </div>
+      </section>
+    </section>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
-
-@Component({
-  components: {
-    HelloWorld
+export default {
+  data() {
+    return {
+        triangleOuter: {
+          'clip-path': 'polygon(50% 0%, 0 100%, 100% 100%)'
+        },
+        triangleInner: {
+          'clip-path': 'polygon(50% 10%, 7% 96%, 93% 96%)'
+        },
+        reverseTriangleOuter: {
+          'clip-path': 'polygon(50% 100%, 0 0, 100% 0)'
+        },
+        reverseTriangleInner: {
+          'clip-path': 'polygon(50% 90%, 7% 4%, 93% 4%)'
+        },
+    }
   }
-})
-export default class Home extends Vue {}
+}
+
+
 </script>
+
+<style scoped>
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #ccc;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.inner-container-top {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background-color: orange;
+}
+
+.inner-container-middle {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  background-color: orangered;
+}
+
+.inner-container-bottom {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: red;
+  align-content: flex-end;
+}
+
+.item {
+  /** ADD AUTOSCALING TO THIS **/
+  width: 400px;
+  height: 400px;
+}
+
+.top-left {
+  width: 200px;
+  height: 200px;
+}
+
+.top-right {
+  width: 200px;
+  height: 200px;
+}
+
+.floating {
+    animation-name: floating;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.floating-reverse {
+    animation-name: floating-reverse;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    60%  { transform: translate(0px, 10px); }
+    to   { transform: translate(0, -0px); }
+}
+
+@keyframes floating-reverse {
+    from { transform: translate(0,  0px); }
+    60%  { transform: translate(0px, -10px); }
+    to   { transform: translate(0, -0px); }
+}
+
+</style>
