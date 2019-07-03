@@ -2,26 +2,20 @@
     <section class="container">
       <section class="inner-container-top">
         <div class="top-left">
-          <app-shape v-bind:clickable="false"  v-bind:outerShape="triangleLeftOuter" v-bind:innerShape="triangleLeftInner"/>
+          <app-shape route="/me" imageName="mugshot" v-bind:outerShape="triangleLeftOuter" v-bind:innerShape="triangleLeftInner"/>
         </div>
         <div class="top-right">
-          <app-shape v-bind:clickable="false"  v-bind:outerShape="triangleRightOuter" v-bind:innerShape="triangleRightInner"/>
+          <app-shape route="/work" imageName="work" v-bind:outerShape="triangleRightOuter" v-bind:innerShape="triangleRightInner"/>
         </div>
       </section>
       <section class="inner-container-middle">
-        <div class="floating item">
-          <app-shape route="/me" v-bind:clickable="true"  imageName="mugshot" v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleInner"/>
-        </div>
-        <div class="floating-reverse item">
-          <app-shape route="/hobbies" v-bind:clickable="true" imageName="LucasOil"  v-bind:outerShape="reverseTriangleOuter" v-bind:innerShape="reverseTriangleInner"/>
-        </div>
-        <div class="floating item">
-          <app-shape route="/work" v-bind:clickable="true"  imageName="work" v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleInner"/>
+        <div class="item">
+          <app-shape-text imageName="LucasOil" v-bind:outerShape="reverseTriangleOuter" v-bind:innerShape="reverseTriangleInner"/>
         </div>
       </section>
       <section class="inner-container-bottom">
         <div class="small-item">
-          <app-shape v-bind:clickable="false"  v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleBottomInner"/>
+          <app-shape route="/" v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleInner"/>
         </div>
       </section>
     </section>
@@ -55,9 +49,6 @@ export default {
         triangleRightInner: {
           'clip-path': 'polygon(10% 0, 100% 90%, 100% 0)'
         },
-        triangleBottomInner: {
-          'clip-path': 'polygon(50% 10%, 5% 100%, 95% 100%)'
-        }
     }
   }
 }
@@ -69,7 +60,7 @@ export default {
 .container {
   width: 100%;
   height: 100vh;
-  background-color: #ccc;
+  /* background-color: #ccc; */
 
   display: flex;
   flex-flow: column;
@@ -80,21 +71,21 @@ export default {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  background-color: orange;
+  /* background-color: orange; */
 }
 
 .inner-container-middle {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  background-color: orangered;
+  /* background-color: orangered; */
 }
 
 .inner-container-bottom {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  background-color: red;
+  /* background-color: red; */
   align-content: flex-end;
 }
 
@@ -135,13 +126,13 @@ export default {
 
 @keyframes floating {
     from { transform: translate(0,  0px); }
-    60%  { transform: translate(0px, 5px); }
+    60%  { transform: translate(0px, 10px); }
     to   { transform: translate(0, -0px); }
 }
 
 @keyframes floating-reverse {
     from { transform: translate(0,  0px); }
-    60%  { transform: translate(0px, -5px); }
+    60%  { transform: translate(0px, -10px); }
     to   { transform: translate(0, -0px); }
 }
 

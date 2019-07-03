@@ -2,13 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Triangle from './components/Triangle.vue'
-import TextTriangle from './components/TextTriangle.vue'
-import ReverseTriangle from './components/ReverseTriangle.vue'
+import Shape from './components/Shape.vue'
+import TextShape from './components/TextShape.vue'
 
-Vue.component('app-triangle', Triangle)
-Vue.component('app-triangle-text', TextTriangle)
-Vue.component('app-triangle-reverse', ReverseTriangle)
+Vue.component('app-shape', Shape)
+Vue.component('app-shape-text', TextShape)
 
 new Vue({
   router,
