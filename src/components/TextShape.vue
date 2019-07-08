@@ -1,6 +1,6 @@
 <template>
     <div v-on:click="show = !show" class="scale-with-children">
-        <div class="text-block" v-on:scroll="onScroll" ref="text" v-text="text" v-bind:style="show ? openstyle : closedstyle"></div>
+        <div class="text-block" v-on:scroll="onScroll" v-text="text" v-bind:style="show ? openstyle : closedstyle"></div>
         <div class="shape" v-bind:style="outerShape"/>
         <img class="shape" v-bind:src="getImgUrl(imageName)" v-bind:style="innerShape"/>
         <div class="percentage-bar" v-bind:style="show ? [{'width': (48 + 0.52 * percentage) + '%'}, {'padding-left': (1.1 * percentage) + '%'}] : [{'width': 48 + '%'}, {'padding-left': 0 + '%'}] "/>

@@ -1,75 +1,44 @@
-<template>  
+<template>   
     <section class="container">
-      <section class="inner-container-top">
-        <div class="top-left">
-          <app-shape v-bind:clickable="false"  v-bind:outerShape="triangleLeftOuter" v-bind:innerShape="triangleLeftInner"/>
-        </div>
-        <div class="top-right">
-          <app-shape v-bind:clickable="false"  v-bind:outerShape="triangleRightOuter" v-bind:innerShape="triangleRightInner"/>
-        </div>
-      </section>
-      <section class="inner-container-middle">
-        <div class="floating item">
-          <app-shape route="/me" v-bind:clickable="true"  imageName="mugshot" v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleInner"/>
-        </div>
-        <div class="floating-reverse item">
-          <app-shape route="/hobbies" v-bind:clickable="true" imageName="LucasOil"  v-bind:outerShape="reverseTriangleOuter" v-bind:innerShape="reverseTriangleInner"/>
-        </div>
-        <div class="floating item">
-          <app-shape route="/work" v-bind:clickable="true"  imageName="work" v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleInner"/>
-        </div>
-      </section>
-      <section class="inner-container-bottom">
-        <div class="small-item">
-          <app-shape v-bind:clickable="false"  v-bind:outerShape="triangleOuter" v-bind:innerShape="triangleBottomInner"/>
-        </div>
-      </section>
+        <section class="inner-container-top">
+          <div class="top-left">
+            <app-shape v-bind:clickable="false"  v-bind:outerShape="this.triangleLeftOuter" v-bind:innerShape="this.triangleLeftInner"/>
+          </div>
+          <div class="top-right">
+            <app-shape v-bind:clickable="false"  v-bind:outerShape="this.triangleRightOuter" v-bind:innerShape="this.triangleRightInner"/>
+          </div>
+        </section>
+        <section class="inner-container-middle">
+          <div class="floating item">
+            <app-shape route="/me" v-bind:clickable="true"  imageName="mugshot" v-bind:outerShape="this.triangleOuter" v-bind:innerShape="this.triangleInner"/>
+          </div>
+          <div class="floating-reverse item">
+            <app-shape route="/hobbies" v-bind:clickable="true" imageName="LucasOil"  v-bind:outerShape="this.reverseTriangleOuter" v-bind:innerShape="this.reverseTriangleInner"/>
+          </div>
+          <div class="floating item">
+            <app-shape route="/work" v-bind:clickable="true"  imageName="work" v-bind:outerShape="this.triangleOuter" v-bind:innerShape="this.triangleInner"/>
+          </div>
+        </section>
+        <section class="inner-container-bottom">
+          <div class="small-item">
+            <app-shape v-bind:clickable="false"  v-bind:outerShape="this.triangleOuter" v-bind:innerShape="this.triangleBottomInner"/>
+          </div>
+        </section>
     </section>
 </template>
 
 <script lang="ts">
+import { SHAPES } from '../assets/shapes';
+
 export default {
-  data() {
-    return {
-        triangleOuter: {
-          'clip-path': 'polygon(50% 0%, 0 100%, 100% 100%)'
-        },
-        triangleInner: {
-          'clip-path': 'polygon(50% 10%, 7% 96%, 93% 96%)'
-        },
-        reverseTriangleOuter: {
-          'clip-path': 'polygon(50% 100%, 0 0, 100% 0)'
-        },
-        reverseTriangleInner: {
-          'clip-path': 'polygon(50% 90%, 7% 4%, 93% 4%)'
-        },
-        triangleLeftOuter: {
-          'clip-path': 'polygon(0 0, 0% 100%, 100% 0)'
-        },
-        triangleLeftInner: {
-          'clip-path': 'polygon(0 0, 0% 90%, 90% 0)'
-        },
-        triangleRightOuter: {
-          'clip-path': 'polygon(0 0, 100% 100%, 100% 0)'
-        },
-        triangleRightInner: {
-          'clip-path': 'polygon(10% 0, 100% 90%, 100% 0)'
-        },
-        triangleBottomInner: {
-          'clip-path': 'polygon(50% 10%, 5% 100%, 95% 100%)'
-        }
-    }
-  }
+  mixins: [SHAPES]
 }
-
-
 </script>
 
 <style scoped>
 .container {
   width: 100%;
   height: 100vh;
-  background-color: #ccc;
 
   display: flex;
   flex-flow: column;
@@ -80,22 +49,23 @@ export default {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  background-color: orange;
+  height: 15%;
+  background-color: rgba(56, 161, 114, 0.5);
 }
 
 .inner-container-middle {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  background-color: orangered;
 }
 
 .inner-container-bottom {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  background-color: red;
   align-content: flex-end;
+  height: 15%;
+  background-color: rgba(56, 161, 114, 0.5);
 }
 
 .item {
@@ -135,14 +105,13 @@ export default {
 
 @keyframes floating {
     from { transform: translate(0,  0px); }
-    60%  { transform: translate(0px, 5px); }
+    60%  { transform: translate(0px, 10px); }
     to   { transform: translate(0, -0px); }
 }
 
 @keyframes floating-reverse {
     from { transform: translate(0,  0px); }
-    60%  { transform: translate(0px, -5px); }
+    60%  { transform: translate(0px, -10px); }
     to   { transform: translate(0, -0px); }
 }
-
 </style>

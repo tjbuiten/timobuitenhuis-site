@@ -1,5 +1,5 @@
 <template>
-    <div v-on:click="onRoute(route)" class="scale-with-children">
+    <div class="container" v-on:click="updateRoute(route)">
         <div class="shape" v-bind:style="clickable? [outerShape, clickableShape]: outerShape"/>
         <img class="shape" v-bind:src="getImgUrl(imageName)" v-bind:style="innerShape"/>
     </div>
@@ -38,7 +38,7 @@ export default {
         getImgUrl: function (imageName:string) {
             return require('@/assets/' + imageName + '.jpg')
         },
-        onRoute: function (route:string) {
+        updateRoute: function (route:string) {
             router.push((route == undefined)? router.currentRoute.path: route)
         }
     },
@@ -53,18 +53,17 @@ export default {
 </script>
 
 <style scoped>    
-.scale-with-children {
+.container {
     height: 100%;
     width: 100%;
-    transition: 0.5s;
+    transition: 0.75s;
     pointer-events: none;
+    align-content: center;
     cursor: pointer;
     filter: drop-shadow(0px 0px 10px #27704f);
-    align-content: center;
-    /* background-color: rgb(222, 124, 235) */
 }
 
-.scale-with-children:hover {
+.container:hover {
     opacity: 0.75;
 }
 
