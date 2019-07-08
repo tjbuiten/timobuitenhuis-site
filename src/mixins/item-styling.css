@@ -1,0 +1,35 @@
+.item {
+  width: 20vw;
+  height: 20vw;
+}
+
+.small-item {
+  width: 10vw;
+  height: 10vw;
+}
+
+.floating {
+    animation-name: floating;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.floating-reverse {
+    animation-name: floating-reverse;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    60%  { transform: translate(0px, 10px); }
+    to   { transform: translate(0, -0px); }
+}
+
+@keyframes floating-reverse {
+    from { transform: translate(0,  0px); }
+    60%  { transform: translate(0px, -10px); }
+    to   { transform: translate(0, -0px); }
+}

@@ -1,10 +1,10 @@
 <template>   
     <section class="container">
         <section class="inner-container-top">
-          <div class="top-left">
+          <div class="small-item">
             <app-shape v-bind:clickable="false"  v-bind:outerShape="this.triangleLeftOuter" v-bind:innerShape="this.triangleLeftInner"/>
           </div>
-          <div class="top-right">
+          <div class="small-item">
             <app-shape v-bind:clickable="false"  v-bind:outerShape="this.triangleRightOuter" v-bind:innerShape="this.triangleRightInner"/>
           </div>
         </section>
@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import { SHAPES } from '../assets/shapes';
+import { SHAPES } from '../mixins/shapes';
 
 export default {
   mixins: [SHAPES]
@@ -36,9 +36,10 @@ export default {
 </script>
 
 <style scoped>
+
 .container {
-  width: 100%;
-  height: 100vh;
+  width: inherit;
+  height: inherit;
 
   display: flex;
   flex-flow: column;
@@ -54,9 +55,13 @@ export default {
 }
 
 .inner-container-middle {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    height: 100%;
+    box-shadow: 
+      inset 0px 15px 8px -10px #CCC,
+      inset 0px -15px 8px -10px #CCC; 
 }
 
 .inner-container-bottom {
@@ -67,26 +72,14 @@ export default {
   height: 15%;
   background-color: rgba(56, 161, 114, 0.5);
 }
-
 .item {
-  /** ADD AUTOSCALING TO THIS **/
-  width: 400px;
-  height: 400px;
+  width: 20vw;
+  height: 20vw;
 }
 
 .small-item {
-  width: 200px;
-  height: 200px;
-}
-
-.top-left {
-  width: 200px;
-  height: 200px;
-}
-
-.top-right {
-  width: 200px;
-  height: 200px;
+  width: 10vw;
+  height: 10vw;
 }
 
 .floating {
@@ -114,4 +107,5 @@ export default {
     60%  { transform: translate(0px, -10px); }
     to   { transform: translate(0, -0px); }
 }
+
 </style>

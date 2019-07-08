@@ -1,13 +1,13 @@
 <template>  
   <section class="container">
     <section class="inner-container-top" v-bind:style="{'background-color': 'rgba(56, 161, 114,' + (0.5 + 0.25 * reversePercentage) + ')'}">
-      <div class="top-left">
+      <div class="small-item">
         <app-shape route="/work" v-bind:clickable="true" imageName="work" v-bind:outerShape="triangleLeftOuter" v-bind:innerShape="triangleLeftInner"/>
       </div>
-    <div class="top-left">
+    <div class="small-item">
       <app-shape imageName="mugshot" v-bind:outerShape="reverseTriangleOuter" v-bind:innerShape="reverseTriangleInnerToBorder"/>
     </div>
-    <div class="top-right">
+    <div class="small-item">
       <app-shape route="/hobbies" v-bind:clickable="true" imageName="LucasOil" v-bind:outerShape="triangleRightOuter" v-bind:innerShape="triangleRightInner"/>
     </div>
     </section>
@@ -15,11 +15,11 @@
       <div class="middle-text">
         {{ text }}
         <div class="item">
-          <app-shape-text imageName="mugshot" v-bind:outerShape="rhombusOuter" v-bind:innerShape="rhombusInner"/>
+          <app-shape imageName="mugshot" v-bind:outerShape="rhombusOuter" v-bind:innerShape="rhombusInner"/>
         </div>
         {{ text }}
         <div class="item">
-          <app-shape-text imageName="mugshot" v-bind:outerShape="rhombusOuter" v-bind:innerShape="rhombusInner"/>
+          <app-shape imageName="mugshot" v-bind:outerShape="rhombusOuter" v-bind:innerShape="rhombusInner"/>
         </div>
       </div>
       <div class="fade"/>
@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { SHAPES } from '../assets/shapes';
+import { SHAPES } from '../mixins/shapes';
 
 export default {
   mixins: [SHAPES],
@@ -64,105 +64,6 @@ export default {
 </script>
 
 <style scoped>
-.percentage-bar {
-  height: 100%;
-  background-color: #42b983;
-}
-
-.middle-text {
-  padding-top: 4%;
-  width: 50%;
-  margin: auto;
-  padding-bottom: 4%;
-}
-
-.container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-}
-
-.inner-container-top {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  height: 15%;
-  z-index: 1;
-}
-
-.inner-container-middle {
-  display: flex;
-  flex-flow: column;
-  z-index: 0;
-  overflow-y: scroll;
-    box-shadow: 
-        inset 0px 21px 8px -10px #CCC,
-        inset 0px -21px 8px -10px #CCC; 
-}
-
-.inner-container-bottom {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-content: flex-end;
-  background-color: #38a172;
-  height: 15%;
-  z-index: 1;
-}
-
-.item {
-  /** ADD AUTOSCALING TO THIS **/
-  margin: auto;
-  width: 400px;
-  height: 400px;
-}
-
-.small-item {
-  width: 200px;
-  height: 200px;
-}
-
-.top-left {
-  width: 200px;
-  height: 200px;
-}
-
-.top-right {
-  width: 200px;
-  height: 200px;
-}
-
-.floating {
-    animation-name: floating;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
-.floating-reverse {
-    animation-name: floating-reverse;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
-.inner-container-middle::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
-
-@keyframes floating {
-    from { transform: translate(0,  0px); }
-    60%  { transform: translate(0px, 10px); }
-    to   { transform: translate(0, -0px); }
-}
-
-@keyframes floating-reverse {
-    from { transform: translate(0,  0px); }
-    60%  { transform: translate(0px, -10px); }
-    to   { transform: translate(0, -0px); }
-}
-
+@import "../mixins/item-styling.css";
+@import "../mixins/detail-screen-styling.css";
 </style>
