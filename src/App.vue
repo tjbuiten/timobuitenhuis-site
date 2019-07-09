@@ -1,11 +1,11 @@
 <template>
-  <div id="app" class="container">  
+  <div id="app" class="container">
       <router-view/>
   </div>
 </template>
 
 <style>
-* { 
+* {
   margin: 0;
   padding: 0;
 }

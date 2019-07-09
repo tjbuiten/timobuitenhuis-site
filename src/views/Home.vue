@@ -1,4 +1,4 @@
-<template>   
+<template>
     <section class="container">
         <section class="inner-container-top">
           <div class="small-item">
@@ -28,15 +28,15 @@
 </template>
 
 <script lang="ts">
-import { SHAPES } from '../mixins/shapes';
+import { SHAPES } from '../mixins/shapes'
+import Vue from 'vue'
 
-export default {
+export default Vue.extend({
   mixins: [SHAPES]
-}
+})
 </script>
 
 <style scoped>
-
 .container {
   width: inherit;
   height: inherit;
@@ -59,9 +59,9 @@ export default {
     flex-flow: row wrap;
     justify-content: space-evenly;
     height: 100%;
-    box-shadow: 
+    box-shadow:
       inset 0px 15px 8px -10px #CCC,
-      inset 0px -15px 8px -10px #CCC; 
+      inset 0px -15px 8px -10px #CCC;
 }
 
 .inner-container-bottom {
@@ -107,5 +107,4 @@ export default {
     60%  { transform: translate(0px, -10px); }
     to   { transform: translate(0, -0px); }
 }
-
 </style>
