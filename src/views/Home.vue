@@ -51,6 +51,7 @@ export default Vue.extend({
   flex-flow: row wrap;
   justify-content: space-between;
   height: 15%;
+  min-height: 75px;
   background-color: rgba(56, 161, 114, 0.5);
 }
 
@@ -70,6 +71,7 @@ export default Vue.extend({
   justify-content: center;
   align-content: flex-end;
   height: 15%;
+  min-height: 75px;
   background-color: rgba(56, 161, 114, 0.5);
 }
 .item {

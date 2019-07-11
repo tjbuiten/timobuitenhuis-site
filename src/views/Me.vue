@@ -5,7 +5,7 @@
         <app-shape route="/work" v-bind:clickable="true" imageName="work" v-bind:outerShape="triangleLeftOuter" v-bind:innerShape="triangleLeftInner"/>
       </div>
     <div class="small-item">
-      <app-shape imageName="mugshot" v-bind:outerShape="reverseTriangleOuter" v-bind:innerShape="reverseTriangleInnerToBorder"/>
+      <app-shape imageName="mugshot" v-bind:outerShape="reverseTriangleOuter" v-bind:innerShape="reverseTriangleInner"/>
     </div>
     <div class="small-item">
       <app-shape route="/hobbies" v-bind:clickable="true" imageName="LucasOil" v-bind:outerShape="triangleRightOuter" v-bind:innerShape="triangleRightInner"/>

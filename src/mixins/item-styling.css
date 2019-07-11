@@ -1,11 +1,15 @@
 .item {
   width: 20vw;
   height: 20vw;
+  min-width: 150px;
+  min-height: 150px;
 }
 
 .small-item {
   width: 10vw;
   height: 10vw;
+  min-width: 100px;
+  min-height: 100px;
 }
 
 .floating {
