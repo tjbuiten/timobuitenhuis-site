@@ -37,6 +37,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+@import "../mixins/item-styling.css";
 .container {
   width: inherit;
   height: inherit;
@@ -53,6 +54,7 @@ export default Vue.extend({
   height: 15%;
   min-height: 75px;
   background-color: rgba(56, 161, 114, 0.5);
+  z-index: 1;
 }
 
 .inner-container-middle {
@@ -63,6 +65,7 @@ export default Vue.extend({
     box-shadow:
       inset 0px 15px 8px -10px #CCC,
       inset 0px -15px 8px -10px #CCC;
+    z-index: 0;
 }
 
 .inner-container-bottom {
@@ -73,40 +76,6 @@ export default Vue.extend({
   height: 15%;
   min-height: 75px;
   background-color: rgba(56, 161, 114, 0.5);
-}
-.item {
-  width: 20vw;
-  height: 20vw;
-}
-
-.small-item {
-  width: 10vw;
-  height: 10vw;
-}
-
-.floating {
-    animation-name: floating;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
-.floating-reverse {
-    animation-name: floating-reverse;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes floating {
-    from { transform: translate(0,  0px); }
-    60%  { transform: translate(0px, 10px); }
-    to   { transform: translate(0, -0px); }
-}
-
-@keyframes floating-reverse {
-    from { transform: translate(0,  0px); }
-    60%  { transform: translate(0px, -10px); }
-    to   { transform: translate(0, -0px); }
+  z-index: 1;
 }
 </style>

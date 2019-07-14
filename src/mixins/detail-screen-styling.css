@@ -11,6 +11,7 @@
     flex-flow: row wrap;
     justify-content: space-between;
     height: 15%;
+    min-height: 75px;
     z-index: 1;
   }
   
@@ -18,10 +19,11 @@
     display: flex;
     flex-flow: column;
     z-index: 0;
+    height: 100%;
     overflow-y: scroll;
-      box-shadow: 
-          inset 0px 21px 8px -10px #CCC,
-          inset 0px -21px 8px -10px #CCC; 
+    box-shadow: 
+        inset 0px 21px 8px -10px #CCC,
+        inset 0px -21px 8px -10px #CCC; 
   }
   
   .inner-container-bottom {
@@ -31,14 +33,15 @@
     align-content: flex-end;
     background-color: #38a172;
     height: 15%;
+    min-height: 75px;
     z-index: 1;
   }
   
   .middle-text {
-    padding-top: 4%;
+    padding-top: 5%;
     width: 50%;
     margin: auto;
-    padding-bottom: 4%;
+    padding-bottom: 5%;
   }
   
   .item {
