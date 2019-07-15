@@ -33,10 +33,7 @@ export default Vue.extend({
   mixins: [SHAPES],
   data () {
     return {
-      text: {
-        default: 'Naast het programmeren sport ik graag. In de winter speel ik ijshockey en ben ik op de piste te vinden. In de zomer speel ik onder andere trompet bij een drumcorps genaamd Jubal, skate ik, schaak ik en los ik Rubik’s cubes op. Ik ben in alle seizoenen op zoek naar nieuwe ervaringen en houdt ervan om mijzelf uit te dagen door dingen te doen die buiten mijn comfort zone liggen. Binnen mijn comfort zone ben ik echter ook hard aan de slag! Ik ben in mijn vrije tijd veel bezig om boeken over, hoofdzakelijk, psychologie door te bladeren. Al met al doe ik dus enorm veel!',
-        type: String
-      },
+      text: 'Naast het programmeren sport ik graag. In de winter speel ik ijshockey en ben ik op de piste te vinden. In de zomer speel ik onder andere trompet bij een drumcorps genaamd Jubal, skate ik, schaak ik en los ik Rubik’s cubes op. Ik ben in alle seizoenen op zoek naar nieuwe ervaringen en houdt ervan om mijzelf uit te dagen door dingen te doen die buiten mijn comfort zone liggen. Binnen mijn comfort zone ben ik echter ook hard aan de slag! Ik ben in mijn vrije tijd veel bezig om boeken over, hoofdzakelijk, psychologie door te bladeren. Al met al doe ik dus enorm veel!',
       percentage: 0,
       reversePercentage: 1
     }

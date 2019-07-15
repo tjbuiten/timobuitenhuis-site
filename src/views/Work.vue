@@ -33,10 +33,7 @@ export default Vue.extend({
   mixins: [SHAPES],
   data () {
     return {
-      text: {
-        default: 'Naast mijn opleiding sta ik op werkgebied natuurlijk niet stil! Ik heb over de afgelopen jaren heen meerdere projecten mogen uitvoeren waarbij ik verscheidene websites heb gemaakt. Zo heb ik gewerkt aan een website voor de volgende personen en/of instanties:\nHet Citroën C6- Genootschap - http://www.citroenc6-genootschap.nl/site2/\nDe Rotterdamse Snijschool - https://snijschool.nl/\nMetBuitenhuis - https://metbuitenhuis.nl/\n',
-        type: String
-      },
+      text: 'Naast mijn opleiding sta ik op werkgebied natuurlijk niet stil! Ik heb over de afgelopen jaren heen meerdere projecten mogen uitvoeren waarbij ik verscheidene websites heb gemaakt. Zo heb ik gewerkt aan een website voor de volgende personen en/of instanties:\nHet Citroën C6- Genootschap - http://www.citroenc6-genootschap.nl/site2/\nDe Rotterdamse Snijschool - https://snijschool.nl/\nMetBuitenhuis - https://metbuitenhuis.nl/\n',
       percentage: 0,
       reversePercentage: 1
     }
